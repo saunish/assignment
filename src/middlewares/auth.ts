@@ -18,7 +18,7 @@ class AuthMiddleware {
 			const token: string = req.headers.authorization?.split(' ')[1] || '';
 
 			try {
-				const userData = JSON.parse(await RedisLoader.client.get(token));
+				const userData = JSON.parse((await RedisLoader.client.get(token)) ?? '');
 				if (userData) {
 					req.user = jwt.verify(token, 'secret_key');
 					next();

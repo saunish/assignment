@@ -16,7 +16,7 @@ class GraphqlMiddleware {
 		app.use(
 			'/graphql',
 			expressMiddleware(apolloServer, {
-				context: async ({ req }) => {
+				context: async ({ req }): Promise<any> => {
 					const token = req.headers.authorization || '';
 					try {
 						const user = jwt.verify(token.replace('Bearer ', ''), 'secret_key');

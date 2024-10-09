@@ -26,7 +26,9 @@ const resolvers = {
 
 			const token = jwt.sign({ id: user.id, username: user.username }, 'Some_Strong_secret', { expiresIn: '1h' });
 
-			await RedisLoader.client.set(token, JSON.stringify({ username }), 'EX', 3600);
+			await RedisLoader.client.set(token, JSON.stringify({ username }), {
+				EX: 3600,
+			});
 
 			return token;
 		},
