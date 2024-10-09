@@ -3,7 +3,6 @@ import { logger } from '../utils/index.js';
 import { Middleware } from '../middlewares/index.js';
 import { SequelizeLoader } from './sequelize.js';
 import { RedisLoader } from './redis.js';
-import { Socket } from './socket.js';
 import '../models/user.js';
 
 class Server {
