@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "prestart": "rimraf dist && npm run docker:compose && tsc",
     "start": "node --env-file=.env dist/index.js",
     "dev": "tsx --env-file=.env src/index.ts",
     "sequelize": "tsx --env-file=.env ./node_modules/sequelize-cli/lib/sequelize",
-    "migrate": "tsx --env-file=.env ./node_modules/sequelize-cli/lib/sequelize db:migrate"
+    "migrate": "tsx --env-file=.env ./node_modules/sequelize-cli/lib/sequelize db:migrate",
+    "docker:compose": "docker compose up -d"
   },
   "dependencies": {
     "@apollo/server": "^4.11.0",
@@ -49,6 +51,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.10.0",
     "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
     "sequelize-cli": "^6.6.2",
     "sequelize-typescript": "^2.1.6",
     "tsx": "^4.19.1",
