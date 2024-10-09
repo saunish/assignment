@@ -23,7 +23,7 @@ class Socket {
 			const token = socket.handshake.auth.token || socket.handshake.headers['authorization']?.replace('Bearer ', '');
 			if (token) {
 				try {
-					const user = jwt.verify(token, 'secret_key');
+					const user = jwt.verify(token, 'Some_Strong_secret');
 					socket.data.user = user;
 					next();
 				} catch (err) {

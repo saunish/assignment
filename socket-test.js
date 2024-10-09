@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 // Connect to the Socket.IO server
 const socket = io('http://localhost:3000', {
 	auth: {
-		token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjciLCJ1c2VybmFtZSI6ImhlbGxvIiwiaWF0IjoxNzI4NDcyMTU5fQ.6XksJFbu87fdA4GPHBy6tl7Wm_Jel9et4XqoDoGoR9U',
+		token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJoZWxsbyIsImlhdCI6MTcyODUwMDExMiwiZXhwIjoxNzI4NTAzNzEyfQ.cssJJ1E8oD2VqsGcIm5xNTUV2-tYeNkH2b_OSvOit7E',
 	},
 });
 
